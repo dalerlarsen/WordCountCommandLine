@@ -1,4 +1,5 @@
 import java.io.File
+import java.io.FileInputStream
 import java.io.InputStream
 import kotlin.system.exitProcess
 
@@ -10,7 +11,7 @@ fun main(args: Array<String>) {
     }
 
     // Read from a file and turn into a string.. test.txt > allTheWords
-    val inputStream: InputStream = File(args[0]).inputStream()
+    val inputStream: FileInputStream = File(args[0]).inputStream()
 
     val allTheWords = inputStream.bufferedReader().use { it.readText() }
 
